@@ -1,9 +1,9 @@
 module Main where
 
 import System.Environment
-import Lib (sumWords)
+import SumWords (sumArgs)
 
 main :: IO ()
-main =
-  getArgs >>=
-  putStrLn . sumWords . head
+main = do
+  args <- getArgs
+  putStrLn (sumArgs "0" args)
